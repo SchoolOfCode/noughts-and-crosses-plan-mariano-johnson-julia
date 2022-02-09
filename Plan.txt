@@ -40,5 +40,7 @@ Display
     9 Square Components, onclick = placeSymbol
 
 Square. Component
+Props 
+    display value(null or X or O)
 Display 
     Empty "" or X or O, it will get this as props

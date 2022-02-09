@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Board from "../Board";
 
 const Game = () => {
   const initialBoard = [null, null, null, null, null, null, null, null, null];
@@ -8,6 +9,7 @@ const Game = () => {
   return (
     <div>
       Game Component
+      <Board board={board} />
       {turns ? (
         <h2>It is Player X's turn.</h2>
       ) : (

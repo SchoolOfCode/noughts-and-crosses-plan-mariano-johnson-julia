@@ -12,8 +12,7 @@ function Board({ board, placeSymbol }) {
             placeSymbol={
               () =>
                 placeSymbol(
-                  squareValue,
-                  index + 1
+                  index
                 ) /* index + 1 is the position of this component in the grid */
             }
           />

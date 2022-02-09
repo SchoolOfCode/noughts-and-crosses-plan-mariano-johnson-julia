@@ -9,6 +9,9 @@ onClick placeSymbol() function
     when you click on a Square
     check if it's empty
         change to X or O, depending on whoseTurn
+        place the symbol in that position
+            how do i get the symbol
+            what position is this Square Component
     otherwise do nothing
     after player has done their move, checkWinner
 

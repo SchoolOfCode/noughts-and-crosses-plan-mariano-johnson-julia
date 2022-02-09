@@ -6,10 +6,10 @@ const Game = () => {
   const [board, setBoard] = useState(initialBoard);
   const [turns, setTurns] = useState(false); // true is X's turn, false is O's turn
 
-  function placeSymbol(symbol, gridPosition) {
+  function placeSymbol(index) {
     //if symbol is not empty, return/do nothing
-    if (symbol !== "") {
-      console.log(`Position ${gridPosition} is not empty:`, symbol);
+    if (board[index] !== "") {
+      console.log(`Position ${index + 1} is not empty:`, board[index]);
       return;
     }
     //if position is empty, place a symbol here
@@ -20,11 +20,10 @@ const Game = () => {
       currentPlayerSymbol = "0";
     }
 
-    gridPosition--; // make gridPosition the actual index of the board state array
     setBoard([
-      ...board.slice(0, gridPosition),
+      ...board.slice(0, index),
       currentPlayerSymbol,
-      ...board.slice(gridPosition + 1),
+      ...board.slice(index + 1),
     ]);
 
     //after a player makes a move / we update the board

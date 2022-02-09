@@ -2,7 +2,7 @@ import { useState } from "react";
 import Board from "../Board";
 
 const Game = () => {
-  const initialBoard = [null, null, null, null, null, null, null, null, null];
+  const initialBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   const [board, setBoard] = useState(initialBoard);
   const [turns, setTurns] = useState(false); // true is X's turn, false is O's turn
 

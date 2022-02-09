@@ -1,12 +1,12 @@
 import React from "react";
 import Square from "../Square";
+import css from "./Board.module.css";
 
 function Board({ board }) {
   return (
-    <div>
-      Board Component
+    <div className={css.container}>
       {board.map((square) => {
-        return <Square />;
+        return <Square value={square} />;
       })}
     </div>
   );

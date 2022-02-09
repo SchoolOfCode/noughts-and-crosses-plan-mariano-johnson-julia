@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 4%;
+  grid-row-gap: 4%;
+  background-color: black;
+  width: 50vh;
+  height: 50vh;
+  margin: auto;
+}

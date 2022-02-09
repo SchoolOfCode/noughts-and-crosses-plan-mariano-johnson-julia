@@ -1,0 +1,44 @@
+Plan.
+
+Main. Game Component
+State
+    board [null,null,null,null,null,null,null,null,null], "X", "O", or null
+    whoseTurn = true | false // true is X's turn, false is O's turn
+
+onClick placeSymbol() function
+    when you click on a Square
+    check if it's empty
+        change to X or O, depending on whoseTurn
+    otherwise do nothing
+    after player has done their move, checkWinner
+
+checkWinner
+    check if there's matching symbols in rows, columns, or diagonals
+    if there is, the game ends and the symbol wins
+    if the board is full, the game ends as a draw
+
+    store possible winning postions
+        board indexes - three rows, three columns, two diagonals
+        123, 456, 789. 147, 258, 369. 159, 357.
+    to check is someone has won the game
+    for each of these index positions, check if they are all the same symbol (ignore nulls)
+        e.g. if they are all X, then that player won, display winning player
+        if the board is full of symbols, the game ends as a draw
+
+Display
+    Board Component
+    Who's turn is it?
+    Display winner or draw
+
+
+Board. Component
+Props
+    board state from Game Component
+    placeSymbol
+
+Display 
+    9 Square Components, onclick = placeSymbol
+
+Square. Component
+Display 
+    Empty "" or X or O, it will get this as props

@@ -1,10 +1,10 @@
 import React from "react";
 import css from "./Square.module.css";
 
-function Square({ value }) {
+function Square({ symbol, placeSymbol }) {
   return (
-    <div className={css.square}>
-      <div>{value}</div>
+    <div onClick={placeSymbol} className={css.square}>
+      <div>{symbol}</div>
     </div>
   );
 }

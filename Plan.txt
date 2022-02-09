@@ -37,7 +37,7 @@ Props
     placeSymbol
 
 Display 
-    9 Square Components, onclick = placeSymbol
+    Map through board props and render 9 Square Components, onclick = placeSymbol
 
 Square. Component
 Props 

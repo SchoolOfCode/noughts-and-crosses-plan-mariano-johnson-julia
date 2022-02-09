@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Board from "../Board";
 import checkWinner from "./checkWinner.js";
 
@@ -6,6 +6,22 @@ const Game = () => {
   const initialBoard = ["", "", "", "", "", "", "", "", ""];
   const [board, setBoard] = useState(initialBoard);
   const [turns, setTurns] = useState(false); // true is X's turn, false is O's turn
+
+  const [winner, setWinner] = useState(null);
+
+  useEffect(() => {
+    setWinner(checkWinner(board));
+    switch (winner) {
+      case 1:
+        console.log(`${turns ? "X" : "O"} won the game`);
+        break;
+      case 2:
+        console.log("Draw");
+        break;
+      default:
+        console.log(`Game in progress`);
+    }
+  }, [board]);
 
   function placeSymbol(index) {
     //if symbol is not empty, return/do nothing
@@ -30,19 +46,6 @@ const Game = () => {
     //after a player makes a move / we update the board
     //it is the next players turn
     setTurns(!turns);
-
-    //later after a move, checkWinner
-    const winner = checkWinner(board);
-    switch (winner) {
-      case 1:
-        console.log(`${turns ? "O" : "X"} won the game`);
-        break;
-      case 2:
-        console.log("Draw");
-        break;
-      default:
-        console.log(`Game in progress`);
-    }
   }
   return (
     <div>

@@ -17,15 +17,14 @@ function checkWinner(board) {
       //If they are empty do nothing
     }
   }
+  //Check if there's a draw
   for (let i = 0; i < lines.length; i++) {
     if (board[i] === "") {
-      return 0;
-      //Check if there's a draw
-      //Loop through the board and check if there are any empty string
-      //If there's an empty string do nothing otherwise return false (draw)
+      return 3;
+      //If there's an empty string do nothing
     }
   }
-  return 3;
+  return 0;
 }
 
 export default checkWinner;

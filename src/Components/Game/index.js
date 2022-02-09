@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Board from "../Board";
+import checkWinner from "./checkWinner.js";
 
 const Game = () => {
   const initialBoard = ["", "", "", "", "", "", "", "", ""];
@@ -31,8 +32,18 @@ const Game = () => {
     setTurns(!turns);
 
     //later after a move, checkWinner
+    const winner = checkWinner(board);
+    switch (winner) {
+      case 1:
+        console.log(`${turns ? "O" : "X"} won the game`);
+        break;
+      case 2:
+        console.log("Draw");
+        break;
+      default:
+        console.log(`Game in progress`);
+    }
   }
-
   return (
     <div>
       <Board board={board} placeSymbol={placeSymbol} />
